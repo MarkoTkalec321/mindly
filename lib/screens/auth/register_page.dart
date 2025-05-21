@@ -4,33 +4,37 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import './models/login_page_model.dart';
+import './models/register_page_model.dart';
+export './models/register_page_model.dart';
 
-class LoginPageWidget extends StatefulWidget {
-  const LoginPageWidget({super.key});
+class RegisterWidget extends StatefulWidget {
+  const RegisterWidget({super.key});
 
-  static String routeName = 'LoginPage';
-  static String routePath = '/loginPage';
+  static String routeName = 'Register';
+  static String routePath = '/registerPage';
 
   @override
-  State<LoginPageWidget> createState() => _LoginPageWidgetState();
+  State<RegisterWidget> createState() => _RegisterWidgetState();
 }
 
-class _LoginPageWidgetState extends State<LoginPageWidget> {
-  late LoginPageModel _model;
+class _RegisterWidgetState extends State<RegisterWidget> {
+  late RegisterPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginPageModel());
+    _model = createModel(context, () => RegisterPageModel());
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
+
+    _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
   }
 
   @override
@@ -57,31 +61,34 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             ).image,
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          shrinkWrap: true,
+          scrollDirection: Axis.vertical,
           children: [
-            SizedBox(height: 60),
-            Text(
-              'Log in',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
-                textStyle: FlutterFlowTheme.of(context).bodyMedium.copyWith(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  fontSize: 40,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black,
-                      offset: Offset(2.0, 4.0),
-                      blurRadius: 4.0,
-                    )
-                  ],
-                  height: 6,
+            Align(
+              alignment: AlignmentDirectional(0, 0),
+              child: Text(
+                'Register',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.copyWith(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    fontSize: 40,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2.0, 4.0),
+                        blurRadius: 4.0,
+                      )
+                    ],
+                    height: 6, // Changed lineHeight to height
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 40),
             Align(
               alignment: AlignmentDirectional(0, 0),
               child: Container(
@@ -108,7 +115,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         ],
                       ),
                     ),
-                    hintText: 'Email',
+                    hintText: 'Name',
                     hintStyle: GoogleFonts.inter(
                       textStyle: FlutterFlowTheme.of(context).labelMedium.copyWith(
                         color: Colors.black,
@@ -172,7 +179,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     controller: _model.textController2,
                     focusNode: _model.textFieldFocusNode2,
                     autofocus: false,
-                    obscureText: !_model.passwordVisibility,
+                    obscureText: false,
                     decoration: InputDecoration(
                       isDense: true,
                       labelStyle: GoogleFonts.inter(
@@ -190,7 +197,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           ],
                         ),
                       ),
-                      hintText: 'Password',
+                      hintText: 'Email',
                       hintStyle: GoogleFonts.inter(
                         textStyle: FlutterFlowTheme.of(context).labelMedium.copyWith(
                           color: Colors.black,
@@ -199,6 +206,83 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      filled: true,
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    style: GoogleFonts.inter(
+                      textStyle: FlutterFlowTheme.of(context).bodyMedium.copyWith(
+                        color: Colors.black,
+                        fontSize: 16,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    cursorColor: FlutterFlowTheme.of(context).primaryText,
+                    validator:
+                        _model.textController2Validator.asValidator(context),
+                  ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0, 0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 0.85,
+                  child: TextFormField(
+                    controller: _model.textController3,
+                    focusNode: _model.textFieldFocusNode3,
+                    autofocus: false,
+                    obscureText: !_model.passwordVisibility,
+                    decoration: InputDecoration(
+                      isDense: true,
+                      labelStyle: GoogleFonts.inter(
+                        textStyle: FlutterFlowTheme.of(context).labelMedium.copyWith(
+                          color: Colors.black,
+                          fontSize: 16,
+                          letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        ),
+                      ),
+                      hintText: 'Password',
+                      hintStyle: GoogleFonts.inter(
+                      textStyle: FlutterFlowTheme.of(context).labelMedium.copyWith(
+                        color: Colors.black,
+                        fontSize: 16,
+                        letterSpacing: 0.0,
+                        fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                      ),
+                    ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Color(0x00000000),
@@ -255,40 +339,42 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     ),
                     cursorColor: FlutterFlowTheme.of(context).primaryText,
                     validator:
-                        _model.textController2Validator.asValidator(context),
+                        _model.textController3Validator.asValidator(context),
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 75, 0, 0),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: 'Log in',
-                options: FFButtonOptions(
-                  // Change width from 50 to a percentage of screen width
-                  width: MediaQuery.sizeOf(context).width * 0.4, // 40% of screen width
-                  height: 50,
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                  color: Color(0xFF84E6D1),
-                  textStyle: GoogleFonts.interTight(
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.copyWith(
-                      color: Colors.black,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w900,
+            Align(
+              alignment: AlignmentDirectional(0, 0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 75, 0, 0),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Register',
+                  options: FFButtonOptions(
+                    width: MediaQuery.sizeOf(context).width * 0.4, // 40% of screen width
+                    height: 50,
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    color: Color(0xFF84E6D1),
+                    textStyle: GoogleFonts.interTight(
+                      textStyle: FlutterFlowTheme.of(context).titleSmall.copyWith(
+                        color: Colors.black,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
+                    elevation: 4,
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  elevation: 4,
-                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
             ),
           ],
         ),
-      ), // Close body
-    ); // Close Scaffold
-  } // 
+      ),
+    );
+  }
 }

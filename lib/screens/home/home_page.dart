@@ -115,9 +115,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
+                onPressed: () => _model.onRegisterPressed(context),
                 text: 'Register',
                 options: FFButtonOptions(
                   width: 230,

@@ -16,6 +16,6 @@ class HomePageModel {
   }
   
   void onRegisterPressed(BuildContext context) {
-    print('Register pressed');
+    Navigator.pushNamed(context, '/registerPage');
   }
 }
