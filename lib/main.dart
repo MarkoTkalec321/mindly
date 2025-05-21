@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/home/home_page.dart';
 import 'screens/auth/login_page.dart';
 import 'screens/auth/register_page.dart';
+import 'screens/achievements/achievements_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,8 @@ class MainApp extends StatelessWidget {
       routes: {
         HomePageWidget.routePath: (context) => const HomePageWidget(),
         LoginPageWidget.routePath: (context) => const LoginPageWidget(),
-        RegisterWidget.routePath: (context) => const RegisterWidget(), // Add this
+        RegisterWidget.routePath: (context) => const RegisterWidget(),
+        AchievementsWidget.routePath: (context) => const AchievementsWidget(),
       },
     );
   }

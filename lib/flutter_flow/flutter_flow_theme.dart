@@ -10,6 +10,7 @@ class FlutterFlowTheme {
   Color get primaryText => Colors.black;
   Color get secondaryText => Colors.grey;
   Color get error => Colors.red;
+  Color get alternate => Colors.grey[400]!; // Added alternate color
   
   TextStyle get bodyMedium => GoogleFonts.inter(
     color: primaryText,
