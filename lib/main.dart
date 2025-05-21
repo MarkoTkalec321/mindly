@@ -3,7 +3,6 @@ import 'screens/auth/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
   runApp(const MainApp());
 }
 

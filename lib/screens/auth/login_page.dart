@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import './models/login_page_model.dart';
+import 'package:mindly/screens/menu/main_navigation.dart';
 
 class LoginPageWidget extends StatefulWidget {
   const LoginPageWidget({super.key});
@@ -256,8 +257,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 75, 0, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainNavigation(),
+                        ),
+                      );
                 },
                 text: 'Log in',
                 options: FFButtonOptions(
