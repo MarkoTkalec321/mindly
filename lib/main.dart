@@ -5,7 +5,6 @@ import 'screens/auth/register_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
   runApp(const MainApp());
 }
 
