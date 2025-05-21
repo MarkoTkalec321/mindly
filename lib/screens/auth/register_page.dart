@@ -349,9 +349,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 75, 0, 0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
+                  onPressed: () => Navigator.pushNamed(context, '/loginPage'),
                   text: 'Register',
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.4, // 40% of screen width
