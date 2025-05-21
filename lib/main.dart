@@ -3,6 +3,7 @@ import 'package:mindly/screens/home/home_page.dart';
 import 'screens/auth/login_page.dart';
 import 'screens/start/start_page.dart';
 import 'screens/auth/register_page.dart';
+import 'screens/leaderboard/leaderboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +26,7 @@ class MainApp extends StatelessWidget {
         LoginPageWidget.routePath: (context) => const LoginPageWidget(),
         RegisterWidget.routePath: (context) => const RegisterWidget(), // Add this
         HomePageWidget.routePath: (context) => const HomePageWidget(),
+        LeaderBoardWidget.routePath: (context) => const LeaderBoardWidget(),
       },
     );
   }
