@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 import 'dart:io';
+import 'screens/home/home_page.dart';
 import 'screens/auth/login_page.dart';
 
 void main() async {
@@ -28,7 +29,11 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPageWidget(),
+      initialRoute: HomePageWidget.routePath,
+      routes: {
+        HomePageWidget.routePath: (context) => const HomePageWidget(),
+        LoginPageWidget.routePath: (context) => const LoginPageWidget(),
+      },
     );
   }
 }
