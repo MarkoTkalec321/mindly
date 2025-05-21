@@ -39,7 +39,7 @@ Widget build(BuildContext context) {
                 'No pressure… just your brain on the line',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 20,
                   fontStyle: FontStyle.italic,
                 ),
               ),
@@ -50,7 +50,7 @@ Widget build(BuildContext context) {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF84E6D1),
-                  minimumSize: const Size(250, 48),
+                  minimumSize: const Size(250, 62),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   ),
@@ -58,7 +58,7 @@ Widget build(BuildContext context) {
                 child: const Text(
                   'Play!',
                   style: TextStyle(
-                    fontSize: 26,
+                    fontSize: 24,
                     fontWeight: FontWeight.w800,
                     color: Color(0xFF222222),
                   ),
