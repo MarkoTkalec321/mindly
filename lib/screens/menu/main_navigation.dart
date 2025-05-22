@@ -1,6 +1,7 @@
   import 'package:flutter/material.dart';
   import 'package:mindly/screens/home_page/home_page.dart';
 import 'package:mindly/screens/leaderboard/leaderboard.dart';
+import 'package:mindly/screens/streak/streak_page.dart';
 
   class MainNavigation extends StatefulWidget {
     const MainNavigation({super.key});
@@ -21,6 +22,7 @@ import 'package:mindly/screens/leaderboard/leaderboard.dart';
   final List<Widget> _screens = [
     const HomePageWidget(),
     const LeaderBoardWidget(),
+    const StreakScreenWidget(),
     Center(child: Text('Streak', style: TextStyle(fontSize: 24))),
     Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
   ];
