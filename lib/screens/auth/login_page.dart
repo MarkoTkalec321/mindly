@@ -264,13 +264,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 75, 0, 0),
               child: FFButtonWidget(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MainNavigation(),
-                        ),
-                      );
+                onPressed: () {
+                  // Replace MaterialPageRoute with pushReplacementNamed
+                  Navigator.pushReplacementNamed(
+                    context,
+                    '/mainNavigation', // Use the route path constant from MainNavigation
+                  );
                 },
                 text: 'Log in',
                 options: FFButtonOptions(

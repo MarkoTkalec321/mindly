@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../quizzes/quizzes_page.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
 
-  static String routeName = 'MainScreen';
-  static String routePath = '/mainScreen';
+  static String routeName = 'homePage';
+  static String routePath = '/homePage';
 
   @override
   State<HomePageWidget> createState() => _HomePageWidgetState();
@@ -46,7 +47,7 @@ Widget build(BuildContext context) {
               const SizedBox(height: 15),
               ElevatedButton(
                 onPressed: () {
-                  print('Play pressed ...');
+                  Navigator.pushNamed(context, QuizzesPageWidget.routePath);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF84E6D1),

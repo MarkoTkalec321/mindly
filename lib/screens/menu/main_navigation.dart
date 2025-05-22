@@ -1,8 +1,12 @@
   import 'package:flutter/material.dart';
   import 'package:mindly/screens/home_page/home_page.dart';
+  import 'package:mindly/screens/profile/profile_page.dart'; 
 
   class MainNavigation extends StatefulWidget {
     const MainNavigation({super.key});
+
+      static String routeName = 'MainNavigation';
+      static String routePath = '/mainNavigation';
 
      @override
      State<MainNavigation> createState() => _MainNavigationState();
@@ -21,7 +25,8 @@
     const HomePageWidget(),
     Center(child: Text('Leaderboard', style: TextStyle(fontSize: 24))),
     Center(child: Text('Streak', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
+    const ProfileWidget(),
+    //Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
   ];
 
     @override
@@ -50,7 +55,7 @@
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: 'Settings',
+              label: 'Profile',
             ),
           ],
         ),

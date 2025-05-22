@@ -3,6 +3,10 @@ import 'screens/auth/login_page.dart';
 import 'screens/start/start_page.dart';
 import 'screens/auth/register_page.dart';
 import 'screens/achievements/achievements_page.dart';
+import 'screens/menu/main_navigation.dart';
+import 'screens/quizzes/quizzes_page.dart';
+import 'screens/profile/profile_page.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +29,9 @@ class MainApp extends StatelessWidget {
         LoginPageWidget.routePath: (context) => const LoginPageWidget(),
         RegisterWidget.routePath: (context) => const RegisterWidget(),
         AchievementsWidget.routePath: (context) => const AchievementsWidget(),
+        MainNavigation.routePath: (context) => const MainNavigation(),
+        QuizzesPageWidget.routePath: (context) => const QuizzesPageWidget(),
+        ProfileWidget.routePath: (context) => const ProfileWidget(),
       },
     );
   }
