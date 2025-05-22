@@ -27,7 +27,7 @@ import 'package:mindly/screens/profile/profile_page.dart';
     const HomePageWidget(),
     const LeaderBoardWidget(),
     const StreakScreenWidget(),
-    Center(child: Text('Streak', style: TextStyle(fontSize: 24))),
+    const ProfileWidget(),
     const ProfileWidget(),
   ];
 

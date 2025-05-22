@@ -34,7 +34,7 @@ class LeaderBoardWidget extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 40.0, bottom: 20.0), // Dodanie dolnego paddingu
+              padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
