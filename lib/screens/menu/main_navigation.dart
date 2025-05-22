@@ -23,11 +23,23 @@ import 'package:mindly/screens/profile/profile_page.dart';
       });
     }
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+      if (args != null && args.containsKey('selectedIndex')) {
+        setState(() {
+          _selectedIndex = args['selectedIndex'] as int;
+        });
+      }
+    });
+  }
+
   final List<Widget> _screens = [
     const HomePageWidget(),
     const LeaderBoardWidget(),
     const StreakScreenWidget(),
-    const ProfileWidget(),
     const ProfileWidget(),
   ];
 

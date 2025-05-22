@@ -67,6 +67,31 @@ class _QuizzesPageWidgetState extends State<QuizzesPageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              Container(
+                width: double.infinity,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                      child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/mainNavigation');
+                          },
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: Color(0xFF39408A),
+                          size: 35,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 40),
                 child: Container(

@@ -54,10 +54,39 @@ class _AchievementsWidgetState extends State<AchievementsWidget> {
             ),
             child: SingleChildScrollView(
               child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 24),
+              padding: EdgeInsets.symmetric(vertical: 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Container(
+                      width: double.infinity,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                  context, 
+                                  '/mainNavigation',
+                                  arguments: {'selectedIndex': 3}, // Assuming profile is index 3 in bottom nav
+                                );
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: Color(0xFF39408A),
+                                size: 35,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     Align(
                       alignment: AlignmentDirectional(0, -1),
                       child: Text(
