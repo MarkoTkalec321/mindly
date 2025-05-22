@@ -1,10 +1,14 @@
-  import 'package:flutter/material.dart';
-  import 'package:mindly/screens/home_page/home_page.dart';
+import 'package:flutter/material.dart';
+import 'package:mindly/screens/home_page/home_page.dart';
 import 'package:mindly/screens/leaderboard/leaderboard.dart';
 import 'package:mindly/screens/streak/streak_page.dart';
+import 'package:mindly/screens/profile/profile_page.dart'; 
 
   class MainNavigation extends StatefulWidget {
     const MainNavigation({super.key});
+
+      static String routeName = 'MainNavigation';
+      static String routePath = '/mainNavigation';
 
      @override
      State<MainNavigation> createState() => _MainNavigationState();
@@ -24,7 +28,7 @@ import 'package:mindly/screens/streak/streak_page.dart';
     const LeaderBoardWidget(),
     const StreakScreenWidget(),
     Center(child: Text('Streak', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
+    const ProfileWidget(),
   ];
 
     @override
@@ -53,7 +57,7 @@ import 'package:mindly/screens/streak/streak_page.dart';
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: 'Settings',
+              label: 'Profile',
             ),
           ],
         ),
